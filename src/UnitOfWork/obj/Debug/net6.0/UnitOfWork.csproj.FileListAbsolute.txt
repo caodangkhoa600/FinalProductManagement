@@ -1,0 +1,17 @@
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\bin\Debug\net6.0\UnitOfWork.deps.json
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\bin\Debug\net6.0\UnitOfWork.dll
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\bin\Debug\net6.0\UnitOfWork.pdb
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\bin\Debug\net6.0\Database.dll
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\bin\Debug\net6.0\Repositories.dll
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\bin\Debug\net6.0\Repositories.pdb
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\bin\Debug\net6.0\Database.pdb
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\UnitOfWork.csproj.AssemblyReference.cache
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\UnitOfWork.GeneratedMSBuildEditorConfig.editorconfig
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\UnitOfWork.AssemblyInfoInputs.cache
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\UnitOfWork.AssemblyInfo.cs
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\UnitOfWork.csproj.CoreCompileInputs.cache
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\UnitOfWork.csproj.CopyComplete
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\UnitOfWork.dll
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\refint\UnitOfWork.dll
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\UnitOfWork.pdb
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\UnitOfWork\obj\Debug\net6.0\ref\UnitOfWork.dll
