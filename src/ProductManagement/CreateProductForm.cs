@@ -5,10 +5,10 @@ namespace ProductManagement
 {
     public partial class CreateProductForm : Form
     {
-        private readonly IProductService _productService;
-        public CreateProductForm(IProductService productService)
+        private readonly IProductServices _productServices;
+        public CreateProductForm(IProductServices productServices)
         {
-            _productService = productService;
+            _productServices = productServices;
             InitializeComponent();
         }
 
@@ -41,7 +41,7 @@ namespace ProductManagement
                 ImageUrl = imageUrl
             };
 
-            _productService.AddProduct(product);
+            _productServices.AddProduct(product);
             MessageBox.Show("Create Successfully");
         }
     }

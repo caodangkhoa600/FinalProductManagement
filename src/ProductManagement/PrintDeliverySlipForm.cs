@@ -1,6 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using ProductManagement.Model;
-using Services.AccountServices;
+using Services.AccountService;
 using Services.OrderRowServices;
 using Services.OrderServices;
 using Services.ProductServices;
@@ -13,13 +13,13 @@ namespace ProductManagement
         private readonly IAccountServices _accountServices;
         private readonly IOrderService _orderService;
         private readonly IOrderRowService _orderRowService;
-        private readonly IProductService _productService;
-        public PrintDeliverySlipForm(IAccountServices accountServices, IOrderService orderService, IOrderRowService orderRowService, IProductService productService)
+        private readonly IProductServices _productServices;
+        public PrintDeliverySlipForm(IAccountServices accountServices, IOrderService orderService, IOrderRowService orderRowService, IProductServices productServices)
         {
             _accountServices = accountServices;
             _orderService = orderService;
             _orderRowService = orderRowService;
-            _productService = productService;
+            _productServices = productServices;
             InitializeComponent();
         }
 
@@ -62,7 +62,7 @@ namespace ProductManagement
         private void queryOrderRow(string orderId)
         {
             var orderRows = _orderRowService.GetAllOrderRows().ToList();
-            var products = _productService.GetAllProducts();
+            var products = _productServices.GetAllProducts();
             var data = new List<PrintDeliverySlipProductModel>();
             
             orderRows.ForEach(e =>

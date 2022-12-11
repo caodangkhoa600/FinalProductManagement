@@ -619,9 +619,15 @@
           "Database.dll": {}
         }
       },
+      "Models/1.0.0": {
+        "runtime": {
+          "Models.dll": {}
+        }
+      },
       "Repositories/1.0.0": {
         "dependencies": {
-          "Database": "1.0.0"
+          "Database": "1.0.0",
+          "Models": "1.0.0"
         },
         "runtime": {
           "Repositories.dll": {}
@@ -1070,6 +1076,11 @@
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "Database/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -8,12 +8,12 @@ namespace ProductManagement
     public partial class BestSellingForm : Form
     {
         private readonly IOrderService _orderService;
-        private readonly IProductService _productService;
+        private readonly IProductServices _productServices;
         private readonly IOrderRowService _orderRowService;
-        public BestSellingForm(IOrderService orderService, IProductService productService, IOrderRowService orderRowService)
+        public BestSellingForm(IOrderService orderService, IProductServices productServices, IOrderRowService orderRowService)
         {
             _orderService = orderService;
-            _productService = productService;
+            _productServices = productServices;
             _orderRowService = orderRowService;
             InitializeComponent();
             fromDatePicker.Format = DateTimePickerFormat.Custom;
@@ -25,7 +25,7 @@ namespace ProductManagement
         private void loadData()
         {
             var orders = _orderService.GetAllOrders();
-            var products = _productService.GetAllProducts();
+            var products = _productServices.GetAllProducts();
             var orderRows = _orderRowService.GetAllOrderRows();
 
             HashSet<string> checkedProduct = new HashSet<string>();
@@ -82,7 +82,7 @@ namespace ProductManagement
                 return;
             }
             
-            var products = _productService.GetAllProducts();
+            var products = _productServices.GetAllProducts();
             var orderRows = _orderRowService.GetAllOrderRows();
 
             HashSet<string> checkedProduct = new HashSet<string>();

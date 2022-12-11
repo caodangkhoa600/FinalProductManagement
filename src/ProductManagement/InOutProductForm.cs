@@ -8,19 +8,19 @@ namespace ProductManagement
 {
     public partial class InOutProductForm : Form
     {
-        private readonly IProductService _productService;
+        private readonly IProductServices _productServices;
         private readonly IOrderService _orderService;
         private readonly IOrderRowService _orderRowService;
         private readonly IProductImportService _productImportService;
         public InOutProductForm(
-            IProductService productService, 
+            IProductServices productServices, 
             IOrderService orderService, 
             IOrderRowService orderRowService, 
             IProductImportService productImportService
             )
         {
             InitializeComponent();
-            _productService = productService;
+            _productServices = productServices;
             _orderService = orderService;
             _orderRowService = orderRowService;
             _productImportService = productImportService;
@@ -29,7 +29,7 @@ namespace ProductManagement
         private void loadData()
         {
             var productImported = _productImportService.GetAllProductImports();
-            var products = _productService.GetAllProducts().ToList();
+            var products = _productServices.GetAllProducts().ToList();
             var data = new List<InOutProductModel>();
             var productImportedRows = productImported.GroupBy(p => p.ProductId)
                 .Select(item =>
@@ -78,7 +78,7 @@ namespace ProductManagement
             string productName = filterTxtBox.Text;
             
             
-            var products = _productService
+            var products = _productServices
                 .GetAllProducts()
                 .Where(p => p.Name.ToLower().Contains(productName.ToLower()))
                 .ToList();

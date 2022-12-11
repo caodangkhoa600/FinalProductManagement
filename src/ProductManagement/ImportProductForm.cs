@@ -5,16 +5,16 @@ namespace ProductManagement
     public partial class ImportProductForm : Form
     {
         private DataGridViewRow _selectedRow = null;
-        private readonly IProductService _productService;
-        public ImportProductForm(IProductService productService)
+        private readonly IProductServices _productServices;
+        public ImportProductForm(IProductServices productServices)
         {
-            _productService = productService;
+            _productServices = productServices;
             InitializeComponent();
         }
 
         private void loadData()
         {
-            var products = _productService.GetAllProducts().ToList();
+            var products = _productServices.GetAllProducts().ToList();
             
             if (products.Count > 0)
             {
@@ -48,7 +48,7 @@ namespace ProductManagement
         {
             string filterName = filterTxtBox.Text;
 
-            var products = _productService
+            var products = _productServices
                 .GetAllProducts()
                 .Where(p => p.Name.ToLower().Contains(filterName.ToLower()))
                 .ToList();
@@ -80,7 +80,7 @@ namespace ProductManagement
             
             
             int importQuantity = (int) quantityNUD.Value;
-            _productService.UpdateProductQuantity(id, importQuantity);
+            _productServices.UpdateProductQuantity(id, importQuantity);
             MessageBox.Show("Success");
         }
     }

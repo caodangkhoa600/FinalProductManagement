@@ -374,3 +374,5 @@ E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\ProductManagem
 E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\ProductManagement\obj\Debug\net6.0-windows\ProductManagement.pdb
 E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\ProductManagement\obj\Debug\net6.0-windows\ProductManagement.genruntimeconfig.cache
 E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\ProductManagement\obj\Debug\net6.0-windows\ref\ProductManagement.dll
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\ProductManagement\bin\Debug\net6.0-windows\Models.dll
+E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\ProductManagement\bin\Debug\net6.0-windows\Models.pdb

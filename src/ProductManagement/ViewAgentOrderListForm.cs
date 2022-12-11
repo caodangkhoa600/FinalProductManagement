@@ -2,8 +2,8 @@
 using ProductManagement.Model;
 using Repositories.AccountRepositories;
 using Repositories.OrderRepositories;
+using Repositories.OrderRowRepositories;
 using Repositories.ProductRepositories;
-using Repository.OrderRowRepositories;
 
 
 namespace ProductManagement

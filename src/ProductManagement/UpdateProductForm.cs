@@ -6,17 +6,17 @@ namespace ProductManagement
     public partial class UpdateProductForm : Form {
 
         private DataGridViewRow _selectedRow = null;
-        private readonly IProductService _productService;
+        private readonly IProductServices _productServices;
     
-        public UpdateProductForm(IProductService productService)
+        public UpdateProductForm(IProductServices productServices)
         {
-            _productService = productService;
+            _productServices = productServices;
             InitializeComponent();
         }
 
         private void loadData()
         {
-            var data = _productService.GetAllProducts().ToList();
+            var data = _productServices.GetAllProducts().ToList();
             if (data.Count > 0)
             {
                 productDataGridView.DataSource = data;
@@ -54,12 +54,12 @@ namespace ProductManagement
             
             string id = _selectedRow.Cells["productId"].Value.ToString();
 
-            var product = _productService.GetProductById(id);
+            var product = _productServices.GetProductById(id);
             product.Name = name;
             product.Price = price;
             product.Description = description;
             product.ImageUrl = imageUrl;
-            _productService.UpdateProduct(product);
+            _productServices.UpdateProduct(product);
            
             loadData();
             

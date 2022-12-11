@@ -1,7 +1,7 @@
 ﻿using Database.Entity;
 using UnitOfWork;
 
-namespace Services.AccountServices;
+namespace Services.AccountService;
 
 public class AccountServices : IAccountServices
 {

@@ -867,11 +867,22 @@
           "bin/placeholder/Database.dll": {}
         }
       },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
+      },
       "Repositories/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Database": "1.0.0"
+          "Database": "1.0.0",
+          "Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Repositories.dll": {}
@@ -3067,6 +3078,11 @@
       "path": "../Database/Database.csproj",
       "msbuildProject": "../Database/Database.csproj"
     },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../../Models/Models.csproj",
+      "msbuildProject": "../../Models/Models.csproj"
+    },
     "Repositories/1.0.0": {
       "type": "project",
       "path": "../Repositories/Repositories.csproj",
@@ -3082,6 +3098,7 @@
     "net6.0": [
       "Database >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 7.0.0",
+      "Models >= 1.0.0",
       "UnitOfWork >= 1.0.0"
     ]
   },
@@ -3112,6 +3129,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\Models\\Models.csproj": {
+              "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\Models\\Models.csproj"
+            },
             "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Database\\Database.csproj": {
               "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Database\\Database.csproj"
             },

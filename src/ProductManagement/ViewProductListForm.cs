@@ -4,16 +4,16 @@ namespace ProductManagement
 {
     public partial class ViewProductListForm : Form
     {
-        private readonly IProductService _productService;
-        public ViewProductListForm(IProductService productService)
+        private readonly IProductServices _productServices;
+        public ViewProductListForm(IProductServices productServices)
         {
-            _productService = productService;
+            _productServices = productServices;
             InitializeComponent();
         }
 
         private void loadData()
         {
-            var data = _productService.GetAllProducts().ToList();
+            var data = _productServices.GetAllProducts().ToList();
             if (data.Count > 0)
             {
                 productDataGridView.DataSource = data;
@@ -47,7 +47,7 @@ namespace ProductManagement
         private void filterBtn_Click(object sender, EventArgs e)
         {
             string filterName = filterTxtBox.Text;
-            var data = _productService
+            var data = _productServices
                 .GetAllProducts()
                 .Where(p => p.Name.ToLower().Contains(filterName.ToLower()))
                 .ToList();

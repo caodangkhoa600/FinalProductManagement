@@ -1,12 +1,13 @@
 ﻿using Database.Entity;
+using Models.Product;
 using UnitOfWork;
 
 namespace Services.ProductServices;
 
-public class ProductService : IProductService
+public class ProductServices : IProductServices
 {
     private readonly IUnitOfWork _unitOfWork;
-    public ProductService(IUnitOfWork unitOfWork)
+    public ProductServices(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
@@ -73,5 +74,47 @@ public class ProductService : IProductService
     {
         return _unitOfWork.ProductRepository.GetProductById(id);
 
+    }
+
+    public async Task<Order> BuyProduct(BuyProductViewModel productViewModel)
+    {
+        _unitOfWork.BeginTransaction();
+        var paymentTypeString = char.ToUpper(productViewModel.PaymentType.ToLower()[0]) +
+                                productViewModel.PaymentType.Substring(1);
+        var paymentType = (PaymentType) Enum.Parse(typeof(PaymentType), paymentTypeString);
+        var order = new Order()
+        {
+            Id = System.Guid.NewGuid().ToString(),
+            PaymentType = paymentType,
+            OrderStatus = OrderStatus.Processing,
+            PaymentStatus = PaymentStatus.Pending,
+            ShippingCost = productViewModel.ShippingCost,
+            Email = productViewModel.Email,
+            Address = productViewModel.Address
+        };
+
+        var totalPrice = 0;
+        
+        productViewModel.Products.ForEach(p =>
+        {
+            var product = _unitOfWork.ProductRepository.GetProductById(p.ProductId);
+            var orderRow = new OrderRow()
+            {
+                OrderId = order.Id,
+                ProductId = p.ProductId,
+                Quantity = p.Quantity
+            };
+            totalPrice += p.Quantity * product.Price;
+            _unitOfWork.OrderRowRepository.AddOrderRows(orderRow);
+            _unitOfWork.SaveChanges();
+        });
+
+        order.TotalPrice = totalPrice;
+        _unitOfWork.OrderRepository.AddOrder(order);
+        _unitOfWork.SaveChanges();
+        
+        _unitOfWork.CommitTransaction();
+
+        return order;
     }
 }

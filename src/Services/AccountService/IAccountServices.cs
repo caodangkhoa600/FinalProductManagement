@@ -1,6 +1,6 @@
 ﻿using Database.Entity;
 
-namespace Services.AccountServices;
+namespace Services.AccountService;
 
 public interface IAccountServices
 {

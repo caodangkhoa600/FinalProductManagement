@@ -867,11 +867,22 @@
           "bin/placeholder/Database.dll": {}
         }
       },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
+      },
       "Repositories/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Database": "1.0.0"
+          "Database": "1.0.0",
+          "Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Repositories.dll": {}
@@ -3053,6 +3064,11 @@
       "type": "project",
       "path": "../Database/Database.csproj",
       "msbuildProject": "../Database/Database.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../../Models/Models.csproj",
+      "msbuildProject": "../../Models/Models.csproj"
     },
     "Repositories/1.0.0": {
       "type": "project",

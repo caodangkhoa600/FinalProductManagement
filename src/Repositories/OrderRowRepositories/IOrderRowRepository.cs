@@ -1,7 +1,7 @@
 ﻿using Database.Entity;
 using Repositories.RepositoryRoot;
 
-namespace Repository.OrderRowRepositories;
+namespace Repositories.OrderRowRepositories;
 
 public interface IOrderRowRepository : IRepository<OrderRow, int>
 {

@@ -1,6 +1,6 @@
 ﻿using Database.Entity;
 using Microsoft.Extensions.DependencyInjection;
-using Services.AccountServices;
+using Services.AccountService;
 using Services.OrderServices;
 
 namespace ProductManagement
