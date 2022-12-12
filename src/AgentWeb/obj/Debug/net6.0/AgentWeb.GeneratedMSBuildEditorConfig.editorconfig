@@ -5,44 +5,45 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AgentWeb
 build_property.RootNamespace = AgentWeb
-build_property.ProjectDir = E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\AgentWeb\
+build_property.ProjectDir = e:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\AgentWeb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\AgentWeb
+build_property.MSBuildProjectDirectory = e:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\AgentWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Authorization/Login.cshtml]
+[e:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Authorization/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Authorization/Register.cshtml]
+[e:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Authorization/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Product/ViewProduct.cshtml]
+[e:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Product/ViewProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxWaWV3UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Shared/Error.cshtml]
+[e:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[e:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/_ViewImports.cshtml]
+[e:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/_ViewStart.cshtml]
+[e:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Shared/_Layout.cshtml]
+[e:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bcs8ebaluk

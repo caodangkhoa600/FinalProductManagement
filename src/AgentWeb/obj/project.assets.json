@@ -3770,8 +3770,8 @@
     },
     "Models/1.0.0": {
       "type": "project",
-      "path": "../../Models/Models.csproj",
-      "msbuildProject": "../../Models/Models.csproj"
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     },
     "Repositories/1.0.0": {
       "type": "project",
@@ -3829,6 +3829,9 @@
           "projectReferences": {
             "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\Models\\Models.csproj": {
               "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\Models\\Models.csproj"
+            },
+            "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Models\\Models.csproj": {
+              "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Models\\Models.csproj"
             },
             "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Services\\Services.csproj": {
               "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Services\\Services.csproj"

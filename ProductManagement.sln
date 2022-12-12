@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork", "src\UnitOfWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentWeb", "src\AgentWeb\AgentWeb.csproj", "{CB26DD29-4BC0-4949-9457-E297A3C72164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{62AE87E2-B395-4D7F-ABC4-76538E5AC225}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "src\Models\Models.csproj", "{62AE87E2-B395-4D7F-ABC4-76538E5AC225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
