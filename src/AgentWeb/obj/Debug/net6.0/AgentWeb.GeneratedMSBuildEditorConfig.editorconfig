@@ -15,12 +15,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\workspace\TDTU\SoftwareEngineering\Final\ProductManagement\src\AgentWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Product/ViewProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxWaWV3UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/workspace/TDTU/SoftwareEngineering/Final/ProductManagement/src/AgentWeb/Views/Shared/Error.cshtml]

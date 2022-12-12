@@ -1,0 +1,77 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Products</h2>
+
+<table id="products" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Description</th>
+        <th>Select Quantity</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+@section scripts
+{
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(() => {
+           var table = $("#products").DataTable({
+               ajax: {
+                   url: "/api/ProductApi/GetProducts",
+                   dataSrc: ""
+               },
+               columns : [
+                {
+                    data : "name",
+                },
+                {
+                    data : "price",
+                },
+                {
+                    data : "quantity"
+                },
+                {
+                    data : "description"
+                },
+                {
+                    data : "quantity",
+                  render: function (data) {
+                    return '<div class="input-group w-auto align-items-center">' +
+                          
+                             ' <input type="number" step="1" max="' + data + '" value="1" min="0" name="quantity" class="quantity-field border-0 text-center w-25"> ' +
+                          '</div>'
+                  }
+                },
+                {
+                    data : "id",
+                    render: function (data) {
+                        return "<button class = 'btn btn-outline-primary js-add' data-product-id="+data+">Add To Cart</button>";
+                    }
+                }
+                 
+               ]
+               
+               }); 
+        });
+        $("#products").on("click", ".js-add", function () {
+           const btn = $(this)
+           console.log(btn.attr("data-product-id"));
+        });
+      
+     
+    </script>
+}

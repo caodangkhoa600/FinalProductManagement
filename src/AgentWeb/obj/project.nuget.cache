@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "W439ePmyA/rn+YyeBiqTfi7UhE4k78oW+2WUdxG9psqcb2hMzUIyLoSHQ9eTuZLNLmMH5miKMrV8Z7/JkH2INg==",
+  "dgSpecHash": "DEhzCRX4m9B7CAkS45NAroynfcjka5iJQYNArwiRykcGEKvCLGj2v1wsU45RtX5i8Hx/d9B5Rhy2G9lC4gYOdQ==",
   "success": true,
   "projectFilePath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\AgentWeb\\AgentWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\caoda\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\caoda\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\caoda\\.nuget\\packages\\jquery\\1.7.0\\jquery.1.7.0.nupkg.sha512",
+    "C:\\Users\\caoda\\.nuget\\packages\\jquery.datatables\\1.10.15\\jquery.datatables.1.10.15.nupkg.sha512",
     "C:\\Users\\caoda\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\caoda\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\caoda\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
