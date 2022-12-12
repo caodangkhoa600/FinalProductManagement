@@ -67,16 +67,24 @@ namespace ProductManagement.Migrations
 
             modelBuilder.Entity("Database.Entity.Cart", b =>
                 {
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("email");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
-                    b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("product_id");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<long?>("CreatedAt")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("product_id");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int")
@@ -85,7 +93,7 @@ namespace ProductManagement.Migrations
                     b.Property<long?>("UpdatedAt")
                         .HasColumnType("bigint");
 
-                    b.HasKey("Email", "ProductId");
+                    b.HasKey("Id");
 
                     b.ToTable("cart", (string)null);
                 });

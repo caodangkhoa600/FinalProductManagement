@@ -12,7 +12,6 @@
     <tr>
         <th>Name</th>
         <th>Price</th>
-        <th>Stock</th>
         <th>Description</th>
         <th>Select Quantity</th>
         <th>Action</th>
@@ -42,19 +41,16 @@
                     data : "price",
                 },
                 {
-                    data : "quantity"
-                },
-                {
                     data : "description"
                 },
                 {
                     data : "quantity",
-                  render: function (data) {
-                    return '<div class="input-group w-auto align-items-center">' +
+                    render: function (data) {
+                        return '<div class="input-group w-auto align-items-center">' +
                           
-                             ' <input type="number" step="1" max="' + data + '" value="1" min="0" name="quantity" class="quantity-field border-0 text-center w-25"> ' +
-                          '</div>'
-                  }
+                                ' <input type="number" step="1" max="100" value="1" min="0" name="quantity" class="quantity-field border-0 text-center w-25"> ' +
+                              '</div>'
+                    }
                 },
                 {
                     data : "id",
@@ -69,7 +65,23 @@
         });
         $("#products").on("click", ".js-add", function () {
            const btn = $(this)
+           const quantity = btn.parents()[1].querySelector("input").value;
+           console.log(quantity);
            console.log(btn.attr("data-product-id"));
+           const cart = {
+                ProductId : btn.attr("data-product-id"),
+                Quantity : 0, 
+                Email : "admin@gmail.com"
+           }
+           
+           cart.Quantity = quantity;
+           
+           $.ajax({
+            type: "POST",
+            url: "/api/CartApi/AddToCart",
+            data: cart
+           })
+           
         });
       
      

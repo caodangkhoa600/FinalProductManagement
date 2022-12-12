@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Repositories.AccountRepositories;
+using Repositories.CartRepositories;
 using Repositories.OrderRepositories;
 using Repositories.OrderRowRepositories;
 using Repositories.ProductImportRepositories;
@@ -16,7 +17,8 @@ public static class RepositoryExtension
             .AddScoped<IOrderRepository, OrderRepository>()
             .AddScoped<IOrderRowRepository, OrderRowRepository>()
             .AddScoped<IProductImportRepository, ProductImportRepository>()
-            .AddScoped<IProductRepository, ProductRepository>();
+            .AddScoped<IProductRepository, ProductRepository>()
+            .AddScoped<ICartRepository, CartRepository>();
         return services;
     }
 }

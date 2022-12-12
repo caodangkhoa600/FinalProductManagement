@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using Database;
 using Repositories.AccountRepositories;
+using Repositories.CartRepositories;
 using Repositories.OrderRepositories;
 using Repositories.OrderRowRepositories;
 using Repositories.ProductImportRepositories;
@@ -12,11 +13,12 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly ApplicationDbContext _dbContext;
     
-    public IAccountRepository AccountRepository { get; set; }
-    public IOrderRepository OrderRepository { get; set; }
-    public IOrderRowRepository OrderRowRepository { get; set; }
-    public IProductImportRepository ProductImportRepository { get; set; }
-    public IProductRepository ProductRepository { get; set; }
+    public IAccountRepository AccountRepository { get; }
+    public IOrderRepository OrderRepository { get; }
+    public IOrderRowRepository OrderRowRepository { get; }
+    public IProductImportRepository ProductImportRepository { get; }
+    public IProductRepository ProductRepository { get; }
+    public ICartRepository CartRepository { get; }
 
     public UnitOfWork(
         ApplicationDbContext dbContext, 
@@ -24,8 +26,7 @@ public class UnitOfWork : IUnitOfWork
         IOrderRepository orderRepository, 
         IOrderRowRepository orderRowRepository,
         IProductImportRepository productImportRepository, 
-        IProductRepository productRepository
-        )
+        IProductRepository productRepository, ICartRepository cartRepository)
     {
         _dbContext = dbContext;
         AccountRepository = accountRepository;
@@ -33,6 +34,7 @@ public class UnitOfWork : IUnitOfWork
         OrderRowRepository = orderRowRepository;
         ProductImportRepository = productImportRepository;
         ProductRepository = productRepository;
+        CartRepository = cartRepository;
     }
 
     public int SaveChanges()

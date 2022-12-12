@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Services.AccountService;
+using Services.CartServices;
 using Services.OrderRowServices;
 using Services.OrderServices;
 using Services.ProductImportServices;
@@ -16,7 +17,8 @@ public static class ServiceExtension
             .AddTransient(typeof(IOrderService), typeof(OrderService))
             .AddTransient(typeof(IOrderRowService), typeof(OrderRowService))
             .AddTransient(typeof(IProductServices), typeof(ProductServices.ProductServices))
-            .AddTransient(typeof(IProductImportService), typeof(ProductImportService));
+            .AddTransient(typeof(IProductImportService), typeof(ProductImportService))
+            .AddTransient(typeof(ICartService), typeof(CartService));
         return services;
     }
 }

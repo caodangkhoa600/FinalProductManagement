@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using Repositories.AccountRepositories;
+using Repositories.CartRepositories;
 using Repositories.OrderRepositories;
 using Repositories.OrderRowRepositories;
 using Repositories.ProductImportRepositories;
@@ -9,11 +10,12 @@ namespace UnitOfWork;
 
 public interface IUnitOfWork
 {
-    IAccountRepository AccountRepository { get; set; }
-    IOrderRepository OrderRepository { get; set; }
-    IOrderRowRepository OrderRowRepository { get; set; }
-    IProductImportRepository ProductImportRepository { get; set; }
-    IProductRepository ProductRepository { get; set; }
+    IAccountRepository AccountRepository { get; }
+    IOrderRepository OrderRepository { get; }
+    IOrderRowRepository OrderRowRepository { get; }
+    IProductImportRepository ProductImportRepository { get; }
+    IProductRepository ProductRepository { get; }
+    ICartRepository CartRepository { get; }
     int SaveChanges();
     void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted);
     void CommitTransaction();

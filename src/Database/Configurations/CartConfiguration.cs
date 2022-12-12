@@ -10,10 +10,10 @@ public class CartConfiguration : IEntityTypeConfiguration<Cart>
     {
         string table = "cart";
         builder.ToTable(table);
-        builder.HasKey(e => new {e.Email, e.ProductId});
+        builder.HasKey(e => e.Id);
+        builder.Property(e => e.Id).HasColumnName("id");
         builder.Property(e => e.ProductId).HasColumnName("product_id");
         builder.Property(e => e.Email).HasColumnName("email");
         builder.Property(e => e.Quantity).HasColumnName("quantity");
-        builder.Ignore(e => e.Id);
     }
 }
