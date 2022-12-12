@@ -1,4 +1,5 @@
 using Database;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Repositories;
 using Services;
 using UnitOfWork;
@@ -7,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
+{
+    option.LoginPath = "/Authorization/Login";
+});
 
 builder.Services.AddSql("Server=localhost;Database=supplement_facts;Trusted_Connection=True;Encrypt=False", "AgentWeb");
 builder.Services.AddRepositories();
@@ -36,10 +41,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ProductApi}/{action=ViewProduct}/{id?}");
+    pattern: "{controller=Authorization}/{action=Login}");
 
 app.Run();
