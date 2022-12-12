@@ -62,7 +62,32 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Email");
 
-                    b.ToTable("Account");
+                    b.ToTable("account", (string)null);
+                });
+
+            modelBuilder.Entity("Database.Entity.Cart", b =>
+                {
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("product_id");
+
+                    b.Property<long?>("CreatedAt")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int")
+                        .HasColumnName("quantity");
+
+                    b.Property<long?>("UpdatedAt")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Email", "ProductId");
+
+                    b.ToTable("cart", (string)null);
                 });
 
             modelBuilder.Entity("Database.Entity.Order", b =>
@@ -111,7 +136,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Order");
+                    b.ToTable("order", (string)null);
                 });
 
             modelBuilder.Entity("Database.Entity.OrderRow", b =>
@@ -147,7 +172,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderRow");
+                    b.ToTable("order_row", (string)null);
                 });
 
             modelBuilder.Entity("Database.Entity.Product", b =>
@@ -189,7 +214,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("product", (string)null);
                 });
 
             modelBuilder.Entity("Database.Entity.ProductImportRecord", b =>
@@ -220,7 +245,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductImportRecord");
+                    b.ToTable("product_import", (string)null);
                 });
 #pragma warning restore 612, 618
         }

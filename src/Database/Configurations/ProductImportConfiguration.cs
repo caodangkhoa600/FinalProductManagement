@@ -8,7 +8,8 @@ public class ProductImportConfiguration : IEntityTypeConfiguration<ProductImport
 {
     public void Configure(EntityTypeBuilder<ProductImportRecord> builder)
     {
-        string table = "order";
+        string table = "product_import";
+        builder.ToTable(table);
         builder.HasKey(e => e.Id);
         builder.Property(e => e.Id).HasColumnName("product_import_id");
         builder.Property(e => e.ProductId).HasColumnName("product_id");

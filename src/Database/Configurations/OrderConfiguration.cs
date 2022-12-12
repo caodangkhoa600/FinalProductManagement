@@ -9,6 +9,7 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
     public void Configure(EntityTypeBuilder<Order> builder)
     {
         string table = "order";
+        builder.ToTable(table);
         builder.HasKey(e => e.Id);
         builder.Property(e => e.Id).HasColumnName("order_id");
         builder.Property(e => e.PaymentType).HasColumnName("payment_type");

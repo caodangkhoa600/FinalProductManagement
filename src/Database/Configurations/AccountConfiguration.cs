@@ -9,6 +9,7 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
     public void Configure(EntityTypeBuilder<Account> builder)
     {
         string table = "account";
+        builder.ToTable(table);
         builder.HasKey(e => e.Email);
         builder.Property(e => e.Username).HasColumnName("username");
         builder.Property(e => e.Address).HasColumnName("address");
