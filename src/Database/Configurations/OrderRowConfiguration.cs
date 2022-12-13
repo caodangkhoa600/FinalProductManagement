@@ -10,7 +10,6 @@ public class OrderRowConfiguration : IEntityTypeConfiguration<OrderRow>
     {
         string table = "order_row";
         builder.HasKey(e => e.Id);
-        builder.ToTable(table);
         builder.Property(e => e.Id).HasColumnName("order_row_id");
         builder.Property(e => e.OrderId).HasColumnName("order_id");
         builder.Property(e => e.ProductId).HasColumnName("product_id");

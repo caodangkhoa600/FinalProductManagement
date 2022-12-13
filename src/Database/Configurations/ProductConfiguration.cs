@@ -9,7 +9,6 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
     public void Configure(EntityTypeBuilder<Product> builder)
     {
         string table = "product";
-        builder.ToTable(table);
         builder.HasKey(e => e.Id);
         builder.Property(e => e.Id).HasColumnName("product_id");
         builder.Property(e => e.Name).HasColumnName("name");

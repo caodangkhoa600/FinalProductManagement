@@ -62,7 +62,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Email");
 
-                    b.ToTable("account", (string)null);
+                    b.ToTable("Account");
                 });
 
             modelBuilder.Entity("Database.Entity.Cart", b =>
@@ -95,7 +95,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("cart", (string)null);
+                    b.ToTable("Cart");
                 });
 
             modelBuilder.Entity("Database.Entity.Order", b =>
@@ -144,7 +144,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("order", (string)null);
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("Database.Entity.OrderRow", b =>
@@ -180,7 +180,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("order_row", (string)null);
+                    b.ToTable("OrderRow");
                 });
 
             modelBuilder.Entity("Database.Entity.Product", b =>
@@ -222,7 +222,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("product", (string)null);
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Database.Entity.ProductImportRecord", b =>
@@ -253,7 +253,7 @@ namespace ProductManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("product_import", (string)null);
+                    b.ToTable("ProductImportRecord");
                 });
 #pragma warning restore 612, 618
         }
