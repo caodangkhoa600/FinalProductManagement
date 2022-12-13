@@ -23,7 +23,6 @@
 
     <ItemGroup>
       <Folder Include="Views\Cart" />
-      <Folder Include="Views\Order" />
       <Folder Include="wwwroot\vendor" />
     </ItemGroup>
 

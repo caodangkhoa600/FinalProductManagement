@@ -3067,8 +3067,8 @@
     },
     "Models/1.0.0": {
       "type": "project",
-      "path": "../../Models/Models.csproj",
-      "msbuildProject": "../../Models/Models.csproj"
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     },
     "Repositories/1.0.0": {
       "type": "project",

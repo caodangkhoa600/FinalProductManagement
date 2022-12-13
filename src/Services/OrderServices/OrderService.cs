@@ -1,4 +1,5 @@
 ﻿using Database.Entity;
+using Models.Order;
 using UnitOfWork;
 
 namespace Services.OrderServices;
@@ -19,6 +20,11 @@ public class OrderService : IOrderService
     public Order? GetOrderByCode(string code)
     {
         return _unitOfWork.OrderRepository.GetOrderByCode(code);
+    }
+
+    public List<OrderDto> GetAllOrderByEmail(string email)
+    {
+        return _unitOfWork.OrderRepository.GetOrderByEmail(email);
     }
 
     public Order UpdateOrder(Order order)

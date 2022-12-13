@@ -13,5 +13,12 @@ public class OrderApiController : ControllerBase
     {
         _orderService = orderService;
     }
+
+    [HttpGet("[action]")]
+    public async Task<List<OrderDto>> GetAllOrders()
+    {
+        var email = User.Identity.Name;
+        return _orderService.GetAllOrderByEmail(email);
+    }
     
 }

@@ -3053,8 +3053,8 @@
     },
     "Models/1.0.0": {
       "type": "project",
-      "path": "../../Models/Models.csproj",
-      "msbuildProject": "../../Models/Models.csproj"
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3095,6 +3095,9 @@
             },
             "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Database\\Database.csproj": {
               "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Database\\Database.csproj"
+            },
+            "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Models\\Models.csproj": {
+              "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Models\\Models.csproj"
             }
           }
         }
