@@ -117,8 +117,8 @@
       
         $("#pay").on('click', () => {
             let address_input = $("#address").val();
-            let payment_type_input = $("#payment_type").val();
-                       
+            let payment_type_input = $("#payment_type").val();          
+            alert("Other Successfully");
             let productsBuy = [];
             var oTable = document.getElementById('products');
        
@@ -144,7 +144,7 @@
                 //loops through each cell in current row
                 
                 var cellVal = oCells.item(0); 
-                var cellVal3 = oCells.item(3);
+                var cellVal3 = oCells.item(2);
                 // var product = {
                 //     productId : "",
                 //     quantity : 0
@@ -153,7 +153,7 @@
                 // product.product_id = cellVal.innerText;
                 // product.quantity = cellVal3.querySelector("input").value;
                 //
-                
+                console.log(cellVal3.querySelector("input"))
                 dataPost.products.push({
                    productId : cellVal.innerText,
                    quantity : cellVal3.querySelector("input").value
