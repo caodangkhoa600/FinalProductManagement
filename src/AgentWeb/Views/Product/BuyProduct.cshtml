@@ -45,15 +45,7 @@
                     </select>
                 </div>
                 <div class="d-flex flex-column b-bottom">
-                    <div class="d-flex justify-content-between py-3"> <small class="text-muted">Order Summary</small>
-                        <p>$122</p>
-                    </div>
-                    <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Additional Service</small>
-                        <p>$15</p>
-                    </div>
-                    <div class="d-flex justify-content-between"> <small class="text-muted">Total Amount</small>
-                        <p>$132</p>
-                    </div>
+                    
                 </div>
                 <div class="my-3"> <button id="pay" class="btn btn-primary">Pay</button></div>
             </div>
@@ -128,17 +120,22 @@
        
       
         $("#pay").on('click', () => {
-            const address_input = $("#address").val();
-            const payment_type_input = $("#payment_type").val();
-            console.log(address_input)
-            
-            console.log(payment_type_input)
-            
+            let address_input = $("#address").val();
+            let payment_type_input = $("#payment_type").val();
+                       
             let productsBuy = [];
             var oTable = document.getElementById('products');
        
             //gets rows of table
             var rowLength = oTable.rows.length;
+            var dataPost = {
+                address : "",
+                paymentType: "",
+                products : [],
+                shippingCost: 15,
+                email : ""
+         
+            }
             //loops through rows    
             for (i = 1; i < rowLength; i++){
        
@@ -152,25 +149,35 @@
                 
                 var cellVal = oCells.item(0); 
                 var cellVal3 = oCells.item(3);
-                var product = {
-                    product_id : "",
-                    quantity : 0
-                }
+                // var product = {
+                //     productId : "",
+                //     quantity : 0
+                // }
+                //
+                // product.product_id = cellVal.innerText;
+                // product.quantity = cellVal3.querySelector("input").value;
+                //
                 
-                product.product_id = cellVal.innerText;
-                product.quantity = cellVal3.querySelector("input").value;
-                
-                
-                productsBuy.push({
-                   product
-                    
+                dataPost.products.push({
+                   productId : cellVal.innerText,
+                   quantity : cellVal3.querySelector("input").value
                 })
-                console.log();
-                console.log(cellVal3.querySelector("input").value)
                 
             }
             
+            let em = '@ViewBag.Email'
+            console.log(em)
+            dataPost.address = address_input
+            dataPost.paymentType = payment_type_input            
+            dataPost.email = em;
             
+            console.log(dataPost)
+            
+            $.ajax({
+                type: "POST",
+                url: "/api/ProductApi/BuyProduct",
+                data: dataPost
+            });
             
             
         }) 

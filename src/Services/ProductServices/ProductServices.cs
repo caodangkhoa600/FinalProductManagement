@@ -7,6 +7,7 @@ namespace Services.ProductServices;
 public class ProductServices : IProductServices
 {
     private readonly IUnitOfWork _unitOfWork;
+    
     public ProductServices(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
@@ -57,6 +58,7 @@ public class ProductServices : IProductServices
     public Product UpdateProductQuantity(string productId, int quantity)
     {
         _unitOfWork.BeginTransaction();
+        
         var product = _unitOfWork.ProductRepository.GetAllProducts().First(p => p.Id == productId);
         product.Quantity += quantity;
         UpdateProduct(product);
@@ -79,6 +81,12 @@ public class ProductServices : IProductServices
     public async Task<Order> BuyProduct(BuyProductViewModel productViewModel)
     {
         _unitOfWork.BeginTransaction();
+        var carts = _unitOfWork.CartRepository.GetAll().Where(e => e.Email == productViewModel.Email);
+        carts.ToList().ForEach(e =>
+        {
+            _unitOfWork.CartRepository.DeleteCart(e.Id);
+            _unitOfWork.SaveChanges();
+        });
         var paymentTypeString = char.ToUpper(productViewModel.PaymentType.ToLower()[0]) +
                                 productViewModel.PaymentType.Substring(1);
         var paymentType = (PaymentType) Enum.Parse(typeof(PaymentType), paymentTypeString);
