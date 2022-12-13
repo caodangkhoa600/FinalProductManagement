@@ -1,0 +1,181 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4 p-0">
+    <div class="row px-md-4 px-2 pt-4">
+        <div class="col-lg-8">
+            <p class="pb-2 fw-bold">Order</p>
+            <div class="card">
+                <div>
+                    <table id="products" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 payment-summary">
+            <p class="fw-bold pt-lg-0 pt-4 pb-2">Payment Summary</p>
+            <div class="card px-md-3 px-2 pt-4">
+                <div class="unregistered mb-4"> <span class="py-1">@ViewBag.Email</span> </div>
+                <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Transaction code</small>
+                    <p class="">VC115665</p>
+                </div>
+                <div class="my-3">
+                    <input class="ps-2" id="address" type="text" name="address"/>
+                </div>
+                <div class="mb-3">
+                    <select id="payment_type" class="form-select" aria-label="Default select example">
+                        <option selected>Open this select payment type</option>
+                        <option value="Momo">Momo</option>
+                        <option value="Bank">Bank</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                </div>
+                <div class="d-flex flex-column b-bottom">
+                    <div class="d-flex justify-content-between py-3"> <small class="text-muted">Order Summary</small>
+                        <p>$122</p>
+                    </div>
+                    <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Additional Service</small>
+                        <p>$15</p>
+                    </div>
+                    <div class="d-flex justify-content-between"> <small class="text-muted">Total Amount</small>
+                        <p>$132</p>
+                    </div>
+                </div>
+                <div class="my-3"> <button id="pay" class="btn btn-primary">Pay</button></div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script>
+    
+        $(document).ready(() => {
+           var table = $("#products").DataTable({
+               ajax: {
+                   url: "/api/CartApi/GetCarts/@ViewBag.Email",
+                   dataSrc: ""
+               },
+               columns : [
+                 {
+                   data : "product_id"
+                   
+                 },
+                {
+                    data : "name",
+                    
+                },
+                {
+                    data : "description"
+                },
+                {
+                    data : "quantity",
+                    render: function (data) {
+                        return '<div class="input-group w-auto align-items-center">' + 
+                                ' <input width="50px" type="number" step="1" max="100" value=' + data + ' min="0" name="quantity" class="quantity-field border-0 text-center w-25"> ' +
+                              '</div>'
+                    }
+                },
+                {
+                    data : "total_price",
+                },
+                
+               ]
+               
+               }); 
+        });
+        $("#products").on("click", ".js-add", function () {
+           const btn = $(this)
+           const quantity = btn.parents()[1].querySelector("input").value;
+           console.log(quantity);
+           console.log(btn.attr("data-product-id"));
+           
+           const cart = {
+                ProductId : btn.attr("data-product-id"),
+                Quantity : 0, 
+                Email : "admin@gmail.com"
+           }
+           
+           cart.Quantity = quantity;
+           
+           $.ajax({
+            type: "PUT",
+            url: "/api/CartApi/UpdateCart",
+            data: cart
+           })
+           
+        });
+        
+       
+      
+        $("#pay").on('click', () => {
+            const address_input = $("#address").val();
+            const payment_type_input = $("#payment_type").val();
+            console.log(address_input)
+            
+            console.log(payment_type_input)
+            
+            let productsBuy = [];
+            var oTable = document.getElementById('products');
+       
+            //gets rows of table
+            var rowLength = oTable.rows.length;
+            //loops through rows    
+            for (i = 1; i < rowLength; i++){
+       
+                //gets cells of current row
+                var oCells = oTable.rows.item(i).cells;
+       
+                //gets amount of cells of current row
+                var cellLength = oCells.length;
+       
+                //loops through each cell in current row
+                
+                var cellVal = oCells.item(0); 
+                var cellVal3 = oCells.item(3);
+                var product = {
+                    product_id : "",
+                    quantity : 0
+                }
+                
+                product.product_id = cellVal.innerText;
+                product.quantity = cellVal3.querySelector("input").value;
+                
+                
+                productsBuy.push({
+                   product
+                    
+                })
+                console.log();
+                console.log(cellVal3.querySelector("input").value)
+                
+            }
+            
+            
+            
+            
+        }) 
+     
+    </script>
+}
+
+

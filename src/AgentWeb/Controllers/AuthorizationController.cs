@@ -17,11 +17,11 @@ public class AuthorizationController : Controller
     [HttpPost("login")]
     public async Task<IActionResult> Login(string email, string password, string returnUrl)
     {
-        if (email == "admin1@gmail.com" && password == "123")
+        if (email == "admin@gmail.com" && password == "123")
         {
             var claims = new List<Claim>();
-            claims.Add(new Claim("email", email));
-            claims.Add(new Claim(ClaimTypes.Email, email));
+            claims.Add(new Claim("name", email));
+            claims.Add(new Claim(ClaimTypes.Name, email));
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
             await HttpContext.SignInAsync(claimsPrincipal);

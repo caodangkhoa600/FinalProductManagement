@@ -8,6 +8,8 @@ public class CartViewModel
     public string ProductId { get; set; }
     [JsonPropertyName("name")]
     public string Name { get; set; }
+    [JsonPropertyName("description")]
+    public string Description { get; set; }
     [JsonPropertyName("quantity")]
     public int Quantity { get; set; }
     [JsonPropertyName("total_price")]

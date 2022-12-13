@@ -26,7 +26,8 @@ public class CartService : ICartService
                 ProductId = c.ProductId,
                 Name = product.Name,
                 Quantity = c.Quantity,
-                TotalPrice = product.Price * c.Quantity
+                TotalPrice = product.Price * c.Quantity,
+                Description = product.Description
             });
         });
 
