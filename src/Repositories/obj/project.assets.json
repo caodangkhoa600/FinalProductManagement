@@ -3090,6 +3090,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\Models\\Models.csproj": {
+              "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\Models\\Models.csproj"
+            },
             "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Database\\Database.csproj": {
               "projectPath": "E:\\workspace\\TDTU\\SoftwareEngineering\\Final\\ProductManagement\\src\\Database\\Database.csproj"
             },
